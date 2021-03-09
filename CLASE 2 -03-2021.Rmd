@@ -1,0 +1,65 @@
+---
+
+
+title: "Clase 2"
+author: "Andrea Capo"
+date: "2/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+# como recuperar datos de excel
+```{r}
+library(readxl)
+ejercicio3 <- read_excel("E:/apuntes/ejercicio3.xlsx")
+tail(ejercicio3)
+```
+
+## como traer datos directamente desde la red
+
+#```{r}
+# library(readr)
+# BSC_proveedores<- read_csv(proveedores.csv)
+#```
+
+## recuperando datos de la NUBE
+
+```{r}
+library(readr)
+BSC_proveedores <- read_csv("https://themys.sid.uncu.edu.ar/r-cran/BSC_proveedores.csv")
+head(BSC_proveedores)
+```
+
+# RECUPERAR DATOS DE GOOGLE DRIVE
+```{r}
+library(readr)
+ANDREA <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSMlP9ki665Pe5gYL-GeEfbEB-tIwKVzQIUuNL7NaqRj8svbWGdiXIvVv-SJYvEcUz8ChP-xpyiDal0/pub?output=csv")
+ANDREA
+```
+
+
